@@ -1,0 +1,21 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Maps/L_CH3ActorsLevel.umap",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/Actor/BP_CH3_MovingActor.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/Actor/BP_CH3_RotateActor.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/GameMode/BP_CH3_GameMode.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/PlayerController/BP_CH3_PlayerController.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/Pawn/BP_CH3_PlayerPawn.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Move.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IMC_PlayerControll.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IMC_PlayerControl.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Look.uasset"
+			]
+		}
+	]
+}

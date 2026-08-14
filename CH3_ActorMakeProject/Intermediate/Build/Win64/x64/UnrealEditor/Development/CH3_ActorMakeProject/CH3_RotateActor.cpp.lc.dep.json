@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\source\\ch3_actormakeproject\\private\\rotateactor\\ch3_rotateactor.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\x64\\ch3_actormakeprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ch3_actormakeproject\\definitions.ch3_actormakeproject.h",
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\source\\ch3_actormakeproject\\public\\rotateactor\\ch3_rotateactor.h",
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\ch3_actormakeproject\\uht\\ch3_rotateactor.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

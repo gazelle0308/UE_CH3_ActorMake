@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\CH3_ActorMakeProject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CH3_ActorMakeProject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\CH3_ActorMakeProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\CH3_ActorMakeProject">
+      <UniqueIdentifier>{95EA873B-82DB-364A-BA3E-B969BBAAFAA4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CH3_ActorMakeProject\CH3_ActorMakeProject.Build.cs">
+      <Filter>Source\CH3_ActorMakeProject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\CH3_ActorMakeProject.cpp">
+      <Filter>Source\CH3_ActorMakeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\CH3_ActorMakeProject.h">
+      <Filter>Source\CH3_ActorMakeProject</Filter>
+    </ClInclude>
+    <Filter Include="Source\CH3_ActorMakeProject\Private">
+      <UniqueIdentifier>{4F137192-1576-3C91-B539-1F4AC67ACC83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CH3_ActorMakeProject\Private\GameMode">
+      <UniqueIdentifier>{9465018C-8BB4-371C-A3D6-7F047E0AB18D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\Private\GameMode\CH3_GameMode.cpp">
+      <Filter>Source\CH3_ActorMakeProject\Private\GameMode</Filter>
+    </ClCompile>
+    <Filter Include="Source\CH3_ActorMakeProject\Private\MovingActor">
+      <UniqueIdentifier>{1DBA78D4-8E8E-3D68-9442-C2ACBC8A2F90}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\Private\MovingActor\CH3_MovingActor.cpp">
+      <Filter>Source\CH3_ActorMakeProject\Private\MovingActor</Filter>
+    </ClCompile>
+    <Filter Include="Source\CH3_ActorMakeProject\Private\PlayerController">
+      <UniqueIdentifier>{B8897D48-D7A5-3836-BAD9-A757D9C709AC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\Private\PlayerController\CH3_PlayerController.cpp">
+      <Filter>Source\CH3_ActorMakeProject\Private\PlayerController</Filter>
+    </ClCompile>
+    <Filter Include="Source\CH3_ActorMakeProject\Private\PlayerPawn">
+      <UniqueIdentifier>{9D997093-AE0E-3D75-B8CC-A41C6C8E1A35}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\Private\PlayerPawn\CH3_PlayerPawn.cpp">
+      <Filter>Source\CH3_ActorMakeProject\Private\PlayerPawn</Filter>
+    </ClCompile>
+    <Filter Include="Source\CH3_ActorMakeProject\Private\RotateActor">
+      <UniqueIdentifier>{35AF8BB3-1E68-3FF1-9B2B-B46D0791B0BB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CH3_ActorMakeProject\Private\RotateActor\CH3_RotateActor.cpp">
+      <Filter>Source\CH3_ActorMakeProject\Private\RotateActor</Filter>
+    </ClCompile>
+    <Filter Include="Source\CH3_ActorMakeProject\Public">
+      <UniqueIdentifier>{D827B3FD-3260-3939-B57B-83915A63D690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CH3_ActorMakeProject\Public\GameMode">
+      <UniqueIdentifier>{DAC5D102-4FCC-34A8-ADE6-00BBF1CF38E4}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\Public\GameMode\CH3_GameMode.h">
+      <Filter>Source\CH3_ActorMakeProject\Public\GameMode</Filter>
+    </ClInclude>
+    <Filter Include="Source\CH3_ActorMakeProject\Public\MovingActor">
+      <UniqueIdentifier>{EBB78231-2600-30F3-B3D1-628CED71A2D7}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\Public\MovingActor\CH3_MovingActor.h">
+      <Filter>Source\CH3_ActorMakeProject\Public\MovingActor</Filter>
+    </ClInclude>
+    <Filter Include="Source\CH3_ActorMakeProject\Public\PlayerController">
+      <UniqueIdentifier>{A0B0E3C7-4B32-38F2-9C01-6F550527CC14}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\Public\PlayerController\CH3_PlayerController.h">
+      <Filter>Source\CH3_ActorMakeProject\Public\PlayerController</Filter>
+    </ClInclude>
+    <Filter Include="Source\CH3_ActorMakeProject\Public\PlayerPawn">
+      <UniqueIdentifier>{581029EE-ED14-352B-87FB-A4FFFA2E4B44}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\Public\PlayerPawn\CH3_PlayerPawn.h">
+      <Filter>Source\CH3_ActorMakeProject\Public\PlayerPawn</Filter>
+    </ClInclude>
+    <Filter Include="Source\CH3_ActorMakeProject\Public\RotateActor">
+      <UniqueIdentifier>{FC238CDE-A421-36DE-ABB8-DE485AE51FD7}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CH3_ActorMakeProject\Public\RotateActor\CH3_RotateActor.h">
+      <Filter>Source\CH3_ActorMakeProject\Public\RotateActor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

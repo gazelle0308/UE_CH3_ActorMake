@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\source\\ch3_actormakeproject\\private\\gamemode\\ch3_gamemode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\x64\\ch3_actormakeprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ch3_actormakeproject\\definitions.ch3_actormakeproject.h",
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\source\\ch3_actormakeproject\\public\\gamemode\\ch3_gamemode.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemode.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemode.generated.h",
+            "c:\\git\\ue_ch3_actormake\\ch3_actormakeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\ch3_actormakeproject\\uht\\ch3_gamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
