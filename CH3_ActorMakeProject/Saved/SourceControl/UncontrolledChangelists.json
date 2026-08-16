@@ -12,9 +12,12 @@
 				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/PlayerController/BP_CH3_PlayerController.uasset",
 				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Blueprints/Pawn/BP_CH3_PlayerPawn.uasset",
 				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Move.uasset",
-				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IMC_PlayerControll.uasset",
 				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IMC_PlayerControl.uasset",
-				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Look.uasset"
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Look.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Fly.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Zoom.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IA_Roll.uasset",
+				"C:/Git/UE_CH3_ActorMake/CH3_ActorMakeProject/Content/Inputs/IMC_PlayerControll.uasset"
 			]
 		}
 	]

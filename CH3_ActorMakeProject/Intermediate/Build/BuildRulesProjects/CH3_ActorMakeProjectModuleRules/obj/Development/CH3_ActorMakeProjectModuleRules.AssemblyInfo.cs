@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CH3_ActorMakeProjectModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5910cbd7175fc31349eaface361af76a45446244")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93c0238ffc7bf8fede8405203e991449f8250067")]
 [assembly: System.Reflection.AssemblyProductAttribute("CH3_ActorMakeProjectModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CH3_ActorMakeProjectModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

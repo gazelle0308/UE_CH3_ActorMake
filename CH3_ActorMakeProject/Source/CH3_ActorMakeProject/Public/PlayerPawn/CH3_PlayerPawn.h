@@ -31,6 +31,18 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Camera")
 	UCameraComponent* CameraComp;
 
+	FVector Start;
+	FVector End;
+
+	FHitResult Hit;
+	FCollisionQueryParams QueryParams;
+
+	bool gravity;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Properties")
+	bool IsFly = false;
+
 protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -40,7 +52,13 @@ protected:
 	UFUNCTION()
 	void Look(const FInputActionValue& value);
 
+	UFUNCTION()
+	void Fly(const FInputActionValue& value);
 
-	//	virtual void BeginPlay() override;
-	//	virtual void Tick(float DeltaTime) override;
+	UFUNCTION()
+	void Roll(const FInputActionValue& value);
+
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
+
 };

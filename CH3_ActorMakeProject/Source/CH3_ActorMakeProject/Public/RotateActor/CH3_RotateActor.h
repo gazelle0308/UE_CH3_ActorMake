@@ -16,6 +16,9 @@ public:
 
 protected:
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ACH3_RotateActor> ThisActorData;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Rotate Actor|Components")
 	USceneComponent* SceneRoot;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CH3 Rotate Actor|Components")
@@ -28,6 +31,15 @@ protected:
 	float YawRotate;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CH3 Rotate Actor|Properties")
 	float RollRotate;
+
+	FTimerHandle ActorTimer;
+	FTimerHandle SpawnTimer;
+
+
+	bool IsAction = true;
+
+	void StateMachine();
+	void SpawnMachine();
 
 
 	virtual void BeginPlay() override;

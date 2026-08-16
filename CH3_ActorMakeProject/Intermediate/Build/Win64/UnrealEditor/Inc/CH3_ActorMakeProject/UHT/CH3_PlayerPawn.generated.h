@@ -20,6 +20,8 @@ struct FInputActionValue;
 
 // ********** Begin Class ACH3_PlayerPawn **********************************************************
 #define FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execRoll); \
+	DECLARE_FUNCTION(execFly); \
 	DECLARE_FUNCTION(execLook); \
 	DECLARE_FUNCTION(execMove);
 

@@ -16,6 +16,9 @@ public:
 
 protected:
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ACH3_MovingActor> ThisActorData;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Moving Actor|Components")
 	USceneComponent* SceneRoot;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CH3 Moving Actor|Components")
@@ -33,11 +36,19 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "CH3 Moving Actor|Properties")
 	FVector MaxRange;
 
-	bool IsReturn;
-
 	FVector StartLocation;
 
 	FVector MoveSpeedV;
+
+	FTimerHandle ActorTimer;
+	FTimerHandle SpawnTimer;
+
+
+	bool IsReturn;
+	bool IsAction = true;
+
+	void StateMachine();
+	void SpawnMachine();
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

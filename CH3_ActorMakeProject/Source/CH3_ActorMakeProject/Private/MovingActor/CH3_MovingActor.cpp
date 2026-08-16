@@ -1,5 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// 26/08/10 Copyright Jinho Song
 
 #include "MovingActor/CH3_MovingActor.h"
 
@@ -47,11 +46,11 @@ ACH3_MovingActor::ACH3_MovingActor()
 
 	IsReturn = false;
 
-	MoveSpeed = 1.0f;
+	MoveSpeed = FMath::RandRange(50.0f, 500.0f);
 
-	MaxRangeToX = 10.0f;
-	MaxRangeToY = 10.0f;
-	MaxRangeToZ = 10.0f;
+	MaxRangeToX = FMath::RandRange(-2000.0f, 2000.0f);
+	MaxRangeToY = FMath::RandRange(-2000.0f, 2000.0f);
+	MaxRangeToZ = FMath::RandRange(-2000.0f, 2000.0f);
 
 }
 
@@ -73,6 +72,22 @@ void ACH3_MovingActor::BeginPlay()
 	MoveSpeedV = FVector(MoveSpeedToX, MoveSpeedToY, MoveSpeedToZ);
 	MaxRange = FVector(MaxRangeToX, MaxRangeToY, MaxRangeToZ);
 
+	GetWorld()->GetTimerManager().SetTimer(
+		ActorTimer,
+		this,
+		&ACH3_MovingActor::StateMachine,
+		10.0f,
+		true
+	);
+
+	GetWorld()->GetTimerManager().SetTimer(
+		SpawnTimer,
+		this,
+		&ACH3_MovingActor::SpawnMachine,
+		8.0f,
+		true
+	);
+
 }
 
 void ACH3_MovingActor::Tick(float DeltaTime)
@@ -82,23 +97,54 @@ void ACH3_MovingActor::Tick(float DeltaTime)
 
 	FTransform NewTransForm;
 
-	if (!IsReturn && IsOverPoint(StartLocation + MaxRange, GetActorLocation(), StartLocation))
-	{ NewTransForm = FTransform(FRotator::ZeroRotator, FVector(MoveSpeedV * DeltaTime), FVector(1.0f)); }
+	if (IsAction) {
+		if (!IsReturn && IsOverPoint(StartLocation + MaxRange, GetActorLocation(), StartLocation))
+		{ NewTransForm = FTransform(FRotator::ZeroRotator, FVector(MoveSpeedV * DeltaTime), FVector(1.0f)); }
+		else if (!IsReturn && !IsOverPoint(StartLocation + MaxRange, GetActorLocation(), StartLocation))
+		{ IsReturn = true; }
 
-	else if (!IsReturn && !IsOverPoint(StartLocation + MaxRange, GetActorLocation(), StartLocation))
-	{ 
-		IsReturn = true; 
+
+		else if (IsReturn && IsOverPoint(StartLocation, GetActorLocation(), StartLocation + MaxRange))
+		{ NewTransForm = FTransform(FRotator::ZeroRotator, FVector(-(MoveSpeedV * DeltaTime)), FVector(1.0f)); }
+		else if (IsReturn && !IsOverPoint(StartLocation, GetActorLocation(), StartLocation + MaxRange))
+		{ IsReturn = false; }
+
+		AddActorWorldTransform(NewTransForm);
 	}
-
-
-	else if (IsReturn && IsOverPoint(StartLocation, GetActorLocation(), StartLocation + MaxRange))
-	{ NewTransForm = FTransform(FRotator::ZeroRotator, FVector(-(MoveSpeedV * DeltaTime)), FVector(1.0f)); }
-
-	else if (IsReturn && !IsOverPoint(StartLocation, GetActorLocation(), StartLocation + MaxRange))
-	{ 
-		IsReturn = false; 
-	}
-
-	AddActorWorldTransform(NewTransForm);
 }
 
+void ACH3_MovingActor::StateMachine()
+{
+	float RandLandPosNum_X = FMath::RandRange(-4000.0f, 4000.0f);
+	float RandLandPosNum_Y = FMath::RandRange(-4000.0f, 4000.0f);
+	float RandHighPosNum = FMath::RandRange(15.0f, 400.0f);
+	FVector OneVector(1.0f);
+	FTransform RandTransform(FRotator::ZeroRotator, FVector(RandLandPosNum_X, RandLandPosNum_Y, RandHighPosNum), OneVector);
+
+
+	float DeltaTime = GetWorld()->GetDeltaSeconds();
+	IsAction = !IsAction;
+
+	if (FMath::RandRange(1, 100) % 8 != 0)
+	{
+		SetActorTransform(RandTransform);
+		StartLocation = GetActorLocation();
+	}
+	else
+	{
+		Destroy();
+	}
+}
+
+void ACH3_MovingActor::SpawnMachine()
+{
+	float RandLandPosNum_X = FMath::RandRange(-4000.0f, 4000.0f);
+	float RandLandPosNum_Y = FMath::RandRange(-4000.0f, 4000.0f);
+	float RandHighPosNum = FMath::RandRange(15.0f, 400.0f);
+
+	FVector OneVector(1.0f);
+	FTransform RandTransform(FRotator::ZeroRotator, FVector(RandLandPosNum_X, RandLandPosNum_Y, RandHighPosNum), OneVector);
+	FActorSpawnParameters SpawnParams;
+
+	GetWorld()->SpawnActor<ACH3_MovingActor>(ThisActorData, RandTransform, SpawnParams);
+}

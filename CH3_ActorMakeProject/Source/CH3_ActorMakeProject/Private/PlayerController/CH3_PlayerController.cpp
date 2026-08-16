@@ -6,7 +6,9 @@
 ACH3_PlayerController::ACH3_PlayerController() :
 	InputMappingContextPlayer(nullptr),
 	InputActionMove(nullptr),
-	InputActionLook(nullptr)
+	InputActionLook(nullptr),
+	InputActionFly(nullptr),
+	InputActionRoll(nullptr)
 {}
 
 void ACH3_PlayerController::BeginPlay()

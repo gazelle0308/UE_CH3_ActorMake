@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeCH3_RotateActor() {}
 // ********** Begin Cross Module References ********************************************************
 CH3_ACTORMAKEPROJECT_API UClass* Z_Construct_UClass_ACH3_RotateActor();
 CH3_ACTORMAKEPROJECT_API UClass* Z_Construct_UClass_ACH3_RotateActor_NoRegister();
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
@@ -60,6 +61,10 @@ struct Z_Construct_UClass_ACH3_RotateActor_Statics
 		{ "IncludePath", "RotateActor/CH3_RotateActor.h" },
 		{ "ModuleRelativePath", "Public/RotateActor/CH3_RotateActor.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ThisActorData_MetaData[] = {
+		{ "Category", "CH3_RotateActor" },
+		{ "ModuleRelativePath", "Public/RotateActor/CH3_RotateActor.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SceneRoot_MetaData[] = {
 		{ "Category", "CH3 Rotate Actor|Components" },
 		{ "EditInline", "true" },
@@ -83,6 +88,7 @@ struct Z_Construct_UClass_ACH3_RotateActor_Statics
 		{ "ModuleRelativePath", "Public/RotateActor/CH3_RotateActor.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ThisActorData;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SceneRoot;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMeshComp;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_PitchRotate;
@@ -95,12 +101,14 @@ struct Z_Construct_UClass_ACH3_RotateActor_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_ThisActorData = { "ThisActorData", nullptr, (EPropertyFlags)0x0024080000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, ThisActorData), Z_Construct_UClass_UClass, Z_Construct_UClass_ACH3_RotateActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ThisActorData_MetaData), NewProp_ThisActorData_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_SceneRoot = { "SceneRoot", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, SceneRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SceneRoot_MetaData), NewProp_SceneRoot_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_StaticMeshComp = { "StaticMeshComp", nullptr, (EPropertyFlags)0x002008000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, StaticMeshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StaticMeshComp_MetaData), NewProp_StaticMeshComp_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_PitchRotate = { "PitchRotate", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, PitchRotate), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PitchRotate_MetaData), NewProp_PitchRotate_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_YawRotate = { "YawRotate", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, YawRotate), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_YawRotate_MetaData), NewProp_YawRotate_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_RollRotate = { "RollRotate", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_RotateActor, RollRotate), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RollRotate_MetaData), NewProp_RollRotate_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACH3_RotateActor_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_ThisActorData,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_SceneRoot,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_StaticMeshComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_RotateActor_Statics::NewProp_PitchRotate,
@@ -144,10 +152,10 @@ ACH3_RotateActor::~ACH3_RotateActor() {}
 struct Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_RotateActor_CH3_RotateActor_h__Script_CH3_ActorMakeProject_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACH3_RotateActor, ACH3_RotateActor::StaticClass, TEXT("ACH3_RotateActor"), &Z_Registration_Info_UClass_ACH3_RotateActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_RotateActor), 3768768182U) },
+		{ Z_Construct_UClass_ACH3_RotateActor, ACH3_RotateActor::StaticClass, TEXT("ACH3_RotateActor"), &Z_Registration_Info_UClass_ACH3_RotateActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_RotateActor), 2384939463U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_RotateActor_CH3_RotateActor_h__Script_CH3_ActorMakeProject_2344351788(TEXT("/Script/CH3_ActorMakeProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_RotateActor_CH3_RotateActor_h__Script_CH3_ActorMakeProject_1415511754(TEXT("/Script/CH3_ActorMakeProject"),
 	Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_RotateActor_CH3_RotateActor_h__Script_CH3_ActorMakeProject_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_RotateActor_CH3_RotateActor_h__Script_CH3_ActorMakeProject_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

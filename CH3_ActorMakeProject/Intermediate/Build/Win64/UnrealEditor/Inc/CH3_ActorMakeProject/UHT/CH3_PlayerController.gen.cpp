@@ -73,10 +73,20 @@ struct Z_Construct_UClass_ACH3_PlayerController_Statics
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Public/PlayerController/CH3_PlayerController.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputActionFly_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Public/PlayerController/CH3_PlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputActionRoll_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Public/PlayerController/CH3_PlayerController.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContextPlayer;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputActionMove;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputActionLook;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputActionFly;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputActionRoll;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -87,10 +97,14 @@ struct Z_Construct_UClass_ACH3_PlayerController_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputMappingContextPlayer = { "InputMappingContextPlayer", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_PlayerController, InputMappingContextPlayer), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputMappingContextPlayer_MetaData), NewProp_InputMappingContextPlayer_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionMove = { "InputActionMove", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_PlayerController, InputActionMove), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputActionMove_MetaData), NewProp_InputActionMove_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionLook = { "InputActionLook", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_PlayerController, InputActionLook), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputActionLook_MetaData), NewProp_InputActionLook_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionFly = { "InputActionFly", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_PlayerController, InputActionFly), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputActionFly_MetaData), NewProp_InputActionFly_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionRoll = { "InputActionRoll", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ACH3_PlayerController, InputActionRoll), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputActionRoll_MetaData), NewProp_InputActionRoll_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACH3_PlayerController_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputMappingContextPlayer,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionMove,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionLook,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionFly,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerController_Statics::NewProp_InputActionRoll,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ACH3_PlayerController_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ACH3_PlayerController_Statics::DependentSingletons[])() = {
@@ -129,10 +143,10 @@ ACH3_PlayerController::~ACH3_PlayerController() {}
 struct Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerController_CH3_PlayerController_h__Script_CH3_ActorMakeProject_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACH3_PlayerController, ACH3_PlayerController::StaticClass, TEXT("ACH3_PlayerController"), &Z_Registration_Info_UClass_ACH3_PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_PlayerController), 999432776U) },
+		{ Z_Construct_UClass_ACH3_PlayerController, ACH3_PlayerController::StaticClass, TEXT("ACH3_PlayerController"), &Z_Registration_Info_UClass_ACH3_PlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_PlayerController), 158943275U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerController_CH3_PlayerController_h__Script_CH3_ActorMakeProject_2070766754(TEXT("/Script/CH3_ActorMakeProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerController_CH3_PlayerController_h__Script_CH3_ActorMakeProject_3531398640(TEXT("/Script/CH3_ActorMakeProject"),
 	Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerController_CH3_PlayerController_h__Script_CH3_ActorMakeProject_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerController_CH3_PlayerController_h__Script_CH3_ActorMakeProject_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
