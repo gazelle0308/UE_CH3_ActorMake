@@ -44,6 +44,8 @@ public:
 	bool IsFly = false;
 
 protected:
+	static constexpr float ActorHalfSize = 80.0f;
+
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()

@@ -91,11 +91,29 @@ void ACH3_PlayerPawn::Move(const FInputActionValue& value)
 	FVector Forward = GetActorForwardVector();
 	FVector Right = GetActorRightVector();
 
-	Forward.Z = 0.0f;
-	Right.Z = 0.0f;
+	Forward.Z = 0.0f; // 지면 이동 시 Z축 방향의 이동을 제거하기 위한 값
+	Right.Z = 0.0f;   // 지면 이동 시 Z축 방향의 이동을 제거하기 위한 값
 
-	Forward.Normalize();
-	Right.Normalize();
+	Forward.Normalize(); // Z값의 제거에 의해 깨진 균형 값을 맞춰주기 위한 Normalize
+	Right.Normalize(); // Z값의 제거에 의해 깨진 균형 값을 맞춰주기 위한 Normalize
+	
+
+	// Normalize():
+	// 벡터의 방향은 유지하면서 벡터의 길이를 1로 만든다.
+ 
+	// 중요:
+	// 해당 코드는 유저의 조작감과도 관계있다.
+	// 유저는 무의식적으로 상하 시선 이동과 지상 이동은 별개라고 인식한다.
+	// 따라서 지상에서는 고개의 움직임과 관계없이 이동 속도가 일정할 것이라고 기대한다.
+	// 그러므로 Z값 제거로 인해 벡터의 길이가 달라지는 해당 상황에서는,
+	// Normalize()를 통해 방향은 유지하면서 벡터의 길이를 1로 정규화하여
+	// 시선의 상하 움직임에 따라 지상 이동 속도가 달라지지 않도록 구현하였다.
+
+	// 결론:
+	// 내가 생각하는 "게임이라면 당연한 것"을 구현에 잘 녹이는 것은 중요하다.
+	// 다만 내가 당연하다고 생각하는 것이 항상 정답이라고 판단하지 않고,
+	// 실제 플레이 경험과 목적에 맞는지 검증하며 필요한 것만 구현하는 것이 중요하다.
+
 
 	FVector MoveData = MoveInput.X * Forward + MoveInput.Y * Right;
 
@@ -147,7 +165,7 @@ void ACH3_PlayerPawn::Fly(const FInputActionValue& value)
 
 		if (!IsFly && FlyInput > 0)
 		{ IsFly = true; }
-		else if (IsFly && FlyInput < 0 && (gravity || !gravity && CurrentZ <= 80 ))
+		else if (IsFly && FlyInput < 0 && (gravity || !gravity && CurrentZ <= ActorHalfSize))
 		{ IsFly = false; }
 
 	}
@@ -155,7 +173,6 @@ void ACH3_PlayerPawn::Fly(const FInputActionValue& value)
 
 void ACH3_PlayerPawn::Roll(const FInputActionValue& value)
 {
-
 	const float RollInput = value.Get<float>();
 
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
@@ -174,7 +191,7 @@ void ACH3_PlayerPawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	Start = GetActorLocation();
-	End = Start - FVector(0.0f, 0.0f, 80.0f);
+	End = Start - FVector(0.0f, 0.0f, ActorHalfSize);
 
 	gravity = GetWorld()->LineTraceSingleByChannel(Hit,
 		Start,
@@ -185,12 +202,12 @@ void ACH3_PlayerPawn::Tick(float DeltaTime)
 	float CurrentZ = GetActorLocation().Z;
 	float GroundZ = Hit.ImpactPoint.Z;
 
-	float TargetZ = GroundZ + 80.0f;
+	float TargetZ = GroundZ + ActorHalfSize; // 중력 도달의 기준점
 	float NextZ = CurrentZ - (980.0f * DeltaTime);
 
 	if(!IsFly)
 	{ 
-		if (NextZ > TargetZ && !gravity && CurrentZ <= 80)
+		if (NextZ > TargetZ && gravity && CurrentZ <= ActorHalfSize)
 		{ AddActorWorldOffset(FVector(0, 0, NextZ - CurrentZ));}
 		else
 		{ AddActorWorldOffset(FVector(0, 0, TargetZ - CurrentZ));}
