@@ -277,6 +277,10 @@ struct Z_Construct_UClass_ACH3_PlayerPawn_Statics
 		{ "Category", "CH3 Player Pawn|Properties" },
 		{ "ModuleRelativePath", "Public/PlayerPawn/CH3_PlayerPawn.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGround_MetaData[] = {
+		{ "Category", "CH3 Player Pawn|Properties" },
+		{ "ModuleRelativePath", "Public/PlayerPawn/CH3_PlayerPawn.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CapsualRoot;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkeletalMeshComp;
@@ -284,6 +288,8 @@ struct Z_Construct_UClass_ACH3_PlayerPawn_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraComp;
 	static void NewProp_IsFly_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsFly;
+	static void NewProp_IsGround_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGround;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -306,13 +312,19 @@ void Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly_SetBit(void* Obj)
 {
 	((ACH3_PlayerPawn*)Obj)->IsFly = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly = { "IsFly", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ACH3_PlayerPawn), &Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsFly_MetaData), NewProp_IsFly_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly = { "IsFly", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ACH3_PlayerPawn), &Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsFly_MetaData), NewProp_IsFly_MetaData) };
+void Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsGround_SetBit(void* Obj)
+{
+	((ACH3_PlayerPawn*)Obj)->IsGround = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsGround = { "IsGround", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ACH3_PlayerPawn), &Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsGround_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGround_MetaData), NewProp_IsGround_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACH3_PlayerPawn_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_CapsualRoot,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_SkeletalMeshComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_SpringArmComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_CameraComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsFly,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACH3_PlayerPawn_Statics::NewProp_IsGround,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ACH3_PlayerPawn_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ACH3_PlayerPawn_Statics::DependentSingletons[])() = {
@@ -351,10 +363,10 @@ ACH3_PlayerPawn::~ACH3_PlayerPawn() {}
 struct Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h__Script_CH3_ActorMakeProject_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACH3_PlayerPawn, ACH3_PlayerPawn::StaticClass, TEXT("ACH3_PlayerPawn"), &Z_Registration_Info_UClass_ACH3_PlayerPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_PlayerPawn), 3706906580U) },
+		{ Z_Construct_UClass_ACH3_PlayerPawn, ACH3_PlayerPawn::StaticClass, TEXT("ACH3_PlayerPawn"), &Z_Registration_Info_UClass_ACH3_PlayerPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACH3_PlayerPawn), 2517751340U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h__Script_CH3_ActorMakeProject_2633103224(TEXT("/Script/CH3_ActorMakeProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h__Script_CH3_ActorMakeProject_10210683(TEXT("/Script/CH3_ActorMakeProject"),
 	Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h__Script_CH3_ActorMakeProject_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Git_UE_CH3_ActorMake_CH3_ActorMakeProject_Source_CH3_ActorMakeProject_Public_PlayerPawn_CH3_PlayerPawn_h__Script_CH3_ActorMakeProject_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

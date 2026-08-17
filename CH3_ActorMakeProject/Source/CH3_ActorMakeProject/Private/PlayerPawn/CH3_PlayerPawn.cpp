@@ -119,8 +119,12 @@ void ACH3_PlayerPawn::Move(const FInputActionValue& value)
 
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
 
+	if (CurrentZ <= TargetZ && IsFly)
+	{ IsFly = false; }
+
 	if (IsFly)
 	{
+
 		if (!FMath::IsNearlyZero(MoveInput.X)) 
 		{ AddActorLocalOffset(FVector(MoveInput.X * 250 * DeltaTime, 0, 0)); }
 
@@ -157,15 +161,14 @@ void ACH3_PlayerPawn::Fly(const FInputActionValue& value)
 
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
 
-	float CurrentZ = GetActorLocation().Z;
-
 	if (!FMath::IsNearlyZero(FlyInput)) {
 
-		AddActorLocalOffset(FVector(0, 0, FlyInput * 500 * DeltaTime));
+		if (!(FlyInput < 0 && TargetZ > CurrentZ))
+		{ AddActorLocalOffset(FVector(0, 0, FlyInput * 500 * DeltaTime)); }
 
 		if (!IsFly && FlyInput > 0)
 		{ IsFly = true; }
-		else if (IsFly && FlyInput < 0 && (gravity || !gravity && CurrentZ <= ActorHalfSize))
+		else if (IsFly && FlyInput < 0 && (NearlyGround || !NearlyGround && CurrentZ <= NearlyGroundCheck))
 		{ IsFly = false; }
 
 	}
@@ -184,32 +187,62 @@ void ACH3_PlayerPawn::Roll(const FInputActionValue& value)
 void ACH3_PlayerPawn::BeginPlay()
 {
 	Super::BeginPlay();
+	FVector StartSetup = GetActorLocation();
+	StartSetup.Z = StartSetup.Z + 500;
+
+	SetActorLocation(StartSetup);
 }
 
 void ACH3_PlayerPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	Start = GetActorLocation();
-	End = Start - FVector(0.0f, 0.0f, ActorHalfSize);
+	float GroundZ;
+	float Accelerate = GravityAccelerate * DeltaTime;
 
-	gravity = GetWorld()->LineTraceSingleByChannel(Hit,
-		Start,
-		End,
+	CurrentZ = GetActorLocation().Z;
+
+	StartTrace = GetActorLocation();
+	EndTrace = StartTrace - FVector(0.0f, 0.0f, ActorHalfSize);
+
+	NearlyGround = GetWorld()->LineTraceSingleByChannel(TraceHit,
+		StartTrace,
+		EndTrace,
 		ECC_Visibility,
 		QueryParams);
 
-	float CurrentZ = GetActorLocation().Z;
-	float GroundZ = Hit.ImpactPoint.Z;
 
-	float TargetZ = GroundZ + ActorHalfSize; // 중력 도달의 기준점
-	float NextZ = CurrentZ - (980.0f * DeltaTime);
+
+	NoMoreGround = FVector(StartTrace.X, StartTrace.Y, -10000);
+
+	FoundGround = GetWorld()->LineTraceSingleByChannel(GroundTraceHit,
+		StartTrace,
+		NoMoreGround,
+		ECC_Visibility,
+		QueryParams);
+
+
+
+	if (FoundGround)
+	{ GroundZ = GroundTraceHit.ImpactPoint.Z; }
+	else
+	{ GroundZ = -10000.0f; }
+
+	TargetZ = GroundZ + NearlyGroundCheck; // 중력 도달의 기준점
+	
+	if (IsFly && NearlyGround)
+	{
+		FVector HookGround = GetActorLocation();
+		HookGround.Z = GroundZ + ActorHalfSize;
+
+		SetActorLocation(HookGround);
+	}
 
 	if(!IsFly)
 	{ 
-		if (NextZ > TargetZ && gravity && CurrentZ <= ActorHalfSize)
-		{ AddActorWorldOffset(FVector(0, 0, NextZ - CurrentZ));}
+		if (NearlyGround)
+		{ AddActorWorldOffset(FVector(0, 0, 0)); }
 		else
-		{ AddActorWorldOffset(FVector(0, 0, TargetZ - CurrentZ));}
+		{ AddActorWorldOffset(FVector(0, 0, -(Accelerate))); }
 	}
 }

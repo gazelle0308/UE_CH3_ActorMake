@@ -31,20 +31,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Camera")
 	UCameraComponent* CameraComp;
 
-	FVector Start;
-	FVector End;
-
-	FHitResult Hit;
-	FCollisionQueryParams QueryParams;
-
-	bool gravity;
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Properties")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Properties")
 	bool IsFly = false;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CH3 Player Pawn|Properties")
+	bool IsGround = true;
+
 protected:
-	static constexpr float ActorHalfSize = 80.0f;
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -63,4 +56,30 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
+
+	static constexpr float ActorHalfSize = 80.0f;
+
+	static constexpr float NearlyGroundCheck = 100.0f;
+
+
+	float CurrentZ;
+
+
+	bool FoundGround;
+	float TargetZ;
+
+	FVector NoMoreGround;
+
+	FHitResult GroundTraceHit;
+
+
+	static constexpr float GravityAccelerate = 980.0f;
+
+	bool NearlyGround;
+
+	FVector EndTrace;
+	FVector StartTrace;
+
+	FHitResult TraceHit;
+	FCollisionQueryParams QueryParams;
 };
