@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"C:\\Git\\UE_CH3_ActorMake\\CH3_ActorMakeProject\\Source\\CH3_ActorMakeProject\\CH3_ActorMakeProject.Build.cs",
-		"C:\\Git\\UE_CH3_ActorMake\\CH3_ActorMakeProject\\Source\\CH3_ActorMakeProject.Target.cs",
-		"C:\\Git\\UE_CH3_ActorMake\\CH3_ActorMakeProject\\Source\\CH3_ActorMakeProjectEditor.Target.cs"
-	],
-	"EngineVersion": "5.6.1"
-}
